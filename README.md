@@ -1,3 +1,3 @@
 # Cartesian Coordinate System
 
-React Component
+A react component
