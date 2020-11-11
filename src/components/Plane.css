@@ -1,9 +1,9 @@
 .plane {
-  color: #1a1a1a;
-  position: relative;
-  border: 1px solid #ececec;
-  width: 300px;
-  height: 300px;
-  margin: 30px;
-  background: #1a1a1a;
+	color: #1a1a1a;
+	position: relative;
+	border: 1px solid #ececec;
+	width: 300px;
+	height: 300px;
+	margin: 30px;
+	background: #1a1a1a;
 }
