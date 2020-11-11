@@ -1,7 +1,7 @@
 import "./Y.css";
 
 const Y = () => {
-  return <div className="y"></div>;
+	return <div className="y"></div>;
 };
 
 export default Y;

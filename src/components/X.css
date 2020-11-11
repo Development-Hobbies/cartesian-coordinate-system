@@ -1,15 +1,15 @@
 .x {
-  background: #ececec;
-  width: 1px;
-  height: 100%;
-  position: absolute;
-  left: 50%;
+	background: #ececec;
+	width: 1px;
+	height: 100%;
+	position: absolute;
+	left: 50%;
 }
 
 .x:before {
-  content: "X";
-  top: -8%;
-  left: 100%;
-  transform: translate(-50%, 0);
-  position: absolute;
+	content: "X";
+	top: -8%;
+	left: 100%;
+	transform: translate(-50%, 0);
+	position: absolute;
 }
