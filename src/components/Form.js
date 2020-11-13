@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Form = ({ datas, setDatas }) => {
+const Form = ({ datas, setDatas, t }) => {
 
 	const [x,setX] = useState(0);
 	const [y, setY] = useState(0);
@@ -20,6 +20,8 @@ const Form = ({ datas, setDatas }) => {
 			{logo,x,y}
 		])
 		setLogo("");
+		t.setXTotal(t.xTotal + x);
+		t.setYTotal(t.yTotal + y);
 		setX(0);
 		setY(0);
 	}
