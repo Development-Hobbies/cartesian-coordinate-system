@@ -9,21 +9,24 @@ const Form = ({ datas, setDatas, t }) => {
 	const [highestY, setHighestY] = useState(0);
 
 	const onChangeX = (e) => {
-		setX(Number(e.target.value));
+		const val = e.target.value;
+		setX(Number(val));
+		if (val > highestX) setHighestX(val);
 	}
 	const onChangeY = (e) => {
-		setY(Number(e.target.value));
+		const val = e.target.value;
+		setY(Number(val));
+		if (val > highestY) setHighestY(val);
 	}
 	const onChangeLogo = (e) => {
 		setLogo(e.target.value);
 	}
 	const onClick = () => {
+		if (!x || !y || !logo) return;
 		setDatas([...datas,
 			{logo,x,y}
 		])
 		setLogo("");
-		if (x > highestX) setHighestX(x);
-		if (y > highestY) setHighestY(y);
 		t.setXTotal(highestX);
 		t.setYTotal(highestY);
 		setX(0);
