@@ -7,8 +7,15 @@ import { useState, useEffect } from "react";
 
 function App() {
 	const [ datas, setDatas ] = useState([]);
-	const [xTotal, setXTotal] = useState(100);
-	const [yTotal, setYTotal] = useState(100);
+	const [xTotal, setXTotal] = useState(0);
+	const [yTotal, setYTotal] = useState(0);
+
+	const T = {
+		xTotal,
+		yTotal,
+		setXTotal,
+		setYTotal
+	}
 
 	return (
 		<div>
@@ -21,7 +28,7 @@ function App() {
 					))
 				}
 			</Plane>
-			<Form setDatas={setDatas} datas={datas} setXTotal={setXTotal} setYTotal={setYTotal}/>
+			<Form setDatas={setDatas} t={T} datas={datas} />
 		</div>
 	);
 }
