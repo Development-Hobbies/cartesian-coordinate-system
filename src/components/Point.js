@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 
-const Point = ({ children, total, x, y }) => {
+const Point = ({ children, xTotal, yTotal, x, y }) => {
 	const [style, setStyle] =  useState({})
 	useEffect(() =>{
 		setStyle({
 			position: "absolute",
-			left: ((x / total) * 100) + "%",
-			bottom: ((y / total) * 100) + "%",
+			left: ((x / xTotal) * 100) + "%",
+			bottom: ((y / yTotal) * 100) + "%",
 			transform: "translate(-50%,50%)",
 			color: "#fff"
 		})
-	},[setStyle, total, x, y])
+	},[setStyle, xTotal, yTotal, x, y])
 	return (
 		<div style={style}>
 			{ children }

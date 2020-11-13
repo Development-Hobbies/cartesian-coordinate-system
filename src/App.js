@@ -1,24 +1,35 @@
 import './App.css';
 import Plane from './components/Plane';
 import Point from './components/Point';
+import Form from './components/Form';
+
+import { useState, useEffect } from "react";
 
 function App() {
-	let participants = [
-		{logo: "A", x: 90, y: 50},
-		{logo: "B", x: 50, y: 50},
-		{logo: "C", x: 10, y: 90}
-	];
-	const total = 100;
+	const [ datas, setDatas ] = useState([]);
+	const [xTotal, setXTotal] = useState(0);
+	const [yTotal, setYTotal] = useState(0);
+
+	const T = {
+		xTotal,
+		yTotal,
+		setXTotal,
+		setYTotal
+	}
+
 	return (
-		<Plane>
-			{
-				participants.map((data) => (
-					<Point x={data.x} y={data.y} total={total}>
-						<h1>{ data.logo }</h1>
-					</Point>
-				))
-			}
-		</Plane>
+		<div>
+			<Plane>
+				{
+					datas.map((data) => (
+						<Point x={data.x} y={data.y} xTotal={xTotal} yTotal={yTotal}>
+							<h1>{ data.logo }</h1>
+						</Point>
+					))
+				}
+			</Plane>
+			<Form setDatas={setDatas} t={T} datas={datas} />
+		</div>
 	);
 }
 
